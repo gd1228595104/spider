@@ -1,0 +1,28 @@
+spring:
+    datasource:
+        username: root
+        password: 123456
+        url: jdbc:mysql://localhost:3306/learn?serverTimezone=CTT&useUnicode=true&characterEncoding=utf-8
+        driver-class-name: com.mysql.jdbc.Driver
+    redis:
+        host: 127.0.0.1
+mybatis:
+    mapper-locations: classpath:mapping/QcspiterMapper.xml
+    type-aliases-package: com.example.sptiledemo.bean
+# 分页配置
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+douban:
+#  前程无忧查找Java实习生网页
+    url: "https://search.51job.com/list/040000,000000,0000,00,9,99,Java%25E5%25BC%2580%25E5%258F%2591%25E5%25AE%259E%25E4%25B9%25A0%25E7%2594%259F,2,1.html?lang=c&stype=&postchannel=0000&workyear=99&cotype=99&degreefrom=99&jobterm=99&companysize=99&providesalary=99&lonlat=0%2C0&radius=-1&ord_field=0&confirmdate=9&fromType=&dibiaoid=0&address=&line=&specialarea=00&from=&welfare="
+
+#    commentNum: "//*[@id=\"info\"]"
+#    author: "/html/body/div[1]/div[4]/article/div[1]/div[2]/div[1]/p[1]/span[2]/a"
+#    price: "/html/body/div[1]/div[4]/article/div[2]/div[1]/span[1]/span/span"
+#    number: "/html/body/div[1]/div[4]/article/div[1]/div[2]/div[1]/p[5]/span[2]"
+#  commentRegex: "[\d]\+"
+

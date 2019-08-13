@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.sptiledemo.dao.QcspiterMapper">
+    <resultMap id="QcspiterMap" type="com.example.sptiledemo.bean.QCPage">
+        <result property="job" column="job" javaType="java.lang.String" jdbcType="VARCHAR"/>
+        <result property="company" column="company" javaType="java.lang.String" jdbcType="VARCHAR"/>
+        <result property="place" column="place" javaType="java.lang.String" jdbcType="VARCHAR"/>
+        <result property="salar" column="salar" javaType="java.lang.String" jdbcType="VARCHAR"/>
+        <result property="date" column="date" javaType="java.lang.String" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <insert id="save" parameterType="com.example.sptiledemo.bean.QCPage">
+        insert into QCSpiter (job,company,place,salar,`date`) values
+        <foreach collection="list" item="item" separator=",">
+            (
+                #{item.job},#{item.company},#{item.place},#{item.salar},#{item.date}
+            )
+        </foreach>
+    </insert>
+
+    <select id="selectAll" resultType="com.example.sptiledemo.bean.QCPage">
+        select job,company,place,salar,date from qcspiter
+    </select>
+
+    <select id="selectCount" resultType="Integer">
+        select count(1) from qcspiter;
+    </select>
+</mapper>
