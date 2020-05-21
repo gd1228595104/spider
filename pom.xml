@@ -50,7 +50,7 @@
         <dependency>
             <groupId>net.sourceforge.htmlunit</groupId>
             <artifactId>htmlunit</artifactId>
-            <version>2.27</version>
+            <version>2.37.0</version>
         </dependency>
         <!--导入页面解析包-->
         <!-- https://mvnrepository.com/artifact/net.sourceforge.htmlcleaner/htmlcleaner -->
